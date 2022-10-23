@@ -1,6 +1,6 @@
 const mysql = require('mysql')
 const db = mysql.createConnection({
-  host: 'localhost',
+  host: '127.0.0.1' || 'localhost',
   user: 'root',
   password: '',
   database: 'bakmi_gm_db'
