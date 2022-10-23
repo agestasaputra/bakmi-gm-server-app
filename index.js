@@ -1,9 +1,12 @@
 const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const port = process.env.PORT || 8080
-const app = express()
 const db = require('./config/connection')
+const dotenv = require('dotenv');
+dotenv.config();
+
+const app = express()
+const port = process.env.PORT
 
 // middleware
 app.use(cors())
