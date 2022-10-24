@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 
 // routes
 app.get('/api', (req, res) => {
-  res.send('Welcome to api pnj-server-app!')
+  res.send('Welcome to api bakmi-gm-server-app!')
 })
 
 // products - get data
