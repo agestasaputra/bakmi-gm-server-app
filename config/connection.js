@@ -1,16 +1,13 @@
 const mysql = require('mysql')
-
-let db
+const db = mysql.createPool({
+  host: 'us-cdbr-east-06.cleardb.net',
+  user: 'bdfcb9f70e8396',
+  password: '35e1339a',
+  database: 'heroku_7ece704c6477526'
+})
 
 // Recreate the connection, since
 function onHandleDisconnect() {
-  const db = mysql.createConnection({
-    host: 'us-cdbr-east-06.cleardb.net',
-    user: 'bdfcb9f70e8396',
-    password: '35e1339a',
-    database: 'heroku_7ece704c6477526'
-  })
-
   db.connect((err) => {                              // The server is either down
     if (err) {                                            // or restarting (takes a while sometimes).
       console.log('error when connecting to db:', err);
@@ -30,6 +27,4 @@ function onHandleDisconnect() {
 
 onHandleDisconnect();
 
-setTimeout(() => {
-  module.exports = db
-}, 1000)
+module.exports = db
