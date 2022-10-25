@@ -30,4 +30,6 @@ function onHandleDisconnect() {
 
 onHandleDisconnect();
 
-module.exports = db
+setTimeout(() => {
+  module.exports = db
+}, 1000)
