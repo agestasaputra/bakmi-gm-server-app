@@ -28,11 +28,11 @@ app.get('/api/products', (req, res) => {
         message: 'Failed to get data products!'
       })
     }
+    
     res.status(200).json({
       datas: result,
       message: 'Success get data products!'
     })
-    db.end()
   })
 })
 
@@ -50,7 +50,7 @@ app.get('/api/products/:code', (req, res) => {
       datas: result,
       message: 'Success get data products!'
     })
-    db.end()
+    
   })
 })
 
@@ -71,7 +71,7 @@ app.post('/api/products', (req, res) => {
       datas: result,
       message: 'Success insert data products!'
     })
-    db.end()
+    
   })
 })
 
@@ -108,7 +108,7 @@ app.put('/api/products/:code', (req, res) => {
         message: 'Data is not found!'
       })
     }
-    db.end()
+    
   })
 })
 
